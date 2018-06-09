@@ -2,7 +2,7 @@ jdk版本：1.8
 
 arrays类提供了对集合类的一些常用操作，比如排序、转化为线程安全的集合类
 
-##排序
+## 排序
 对于基本的数据类型都提供了sort函数，就以int为例子
 
 ```java
@@ -94,7 +94,7 @@ private static void mergeSort(Object[] src,
         x[b] = t;
     }
 ```
-##并行前缀操作
+## 并行前缀操作
 对集合中的元素做一些操作，比如加法什么的，针对大集合通过并行的方式会比循环更高效
 ```java 
 public static <T> void parallelPrefix(T[] array, BinaryOperator<T> op) {
@@ -104,7 +104,7 @@ public static <T> void parallelPrefix(T[] array, BinaryOperator<T> op) {
                     (null, op, array, 0, array.length).invoke();
     }
  ```
-##二分查找
+## 二分查找
 对于基本数据类型，以int为例子，可以指定查找的范围。
 ```java
 public static int binarySearch(int[] a, int fromIndex, int toIndex,
@@ -162,7 +162,7 @@ private static int binarySearch0(Object[] a, int fromIndex, int toIndex,
     return -(low + 1);  // key not found.
 }
 ```
-##判断两个数组是否相等
+## 判断两个数组是否相等
 基础数据类型==比较，float和double用int，long表示以后==比较，object调用equals方法比较。
 ```java
 public static boolean equals(int[] a, int[] a2) {
@@ -217,7 +217,7 @@ public static boolean equals(Object[] a, Object[] a2) {
     return true;
 }
 ```
-##填充
+## 填充
 ```java
 public static void fill(Object[] a, int fromIndex, int toIndex, Object val) {
     rangeCheck(a.length, fromIndex, toIndex);
@@ -230,7 +230,7 @@ public static void fill(int[] a, int fromIndex, int toIndex, int val) {
         a[i] = val;
 }
 ```
-##复制克隆
+## 复制克隆
 基本类型
 ```java
 public static int[] copyOf(int[] original, int newLength) {
@@ -260,6 +260,6 @@ public static Object newInstance(Class<?> componentType, int length)
 private static native Object newArray(Class<?> componentType, int length)
     throws NegativeArraySizeException;
 ```
-##Misc
-##hashcode
-##toString
+## Misc
+## hashcode
+## toString
