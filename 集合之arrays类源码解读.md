@@ -240,7 +240,7 @@ public static int[] copyOf(int[] original, int newLength) {
     return copy;
 }
 ```
-
+object
 ```java
 public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
     @SuppressWarnings("unchecked")
